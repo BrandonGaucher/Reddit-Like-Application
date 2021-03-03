@@ -12,23 +12,23 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Step 3.) CLone this repository
 
-### `$ git clone https://github.com/BrandonGaucher/360Project.git`
+### `git clone https://github.com/BrandonGaucher/360Project.git`
 
-### `$ cd 360Project`
+### `cd 360Project`
 
 ## Step 4.) install dependencies 
 
-`$ npm version`
+### `npm version`
 
-`$ cd server`
+### `cd server`
 
-`$ npm install`
+### `npm install`
 
 ## Step 5.) run docker-compose build and docker-compose up -d
 
 
-`$ docker-compose build`
-`$ docker-compose up -d` 
+### `docker-compose build`
+### `docker-compose up -d` 
 
 ## React app
 navigate to http://localhost:3000 for the react app.
