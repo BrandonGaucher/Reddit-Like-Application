@@ -1,0 +1,82 @@
+.navbar{
+    background-color: black;
+    
+    height: 6rem;
+    position: fixed;
+    width: 100vw;
+    transition: 0.75s ease-in-out;
+    z-index: 999;
+}
+
+.list{
+    display: inline-flex;
+    float: right;
+    margin-right: 2rem;
+    padding-top: 1.25rem;
+   
+}
+
+.nav-a{
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding-right: 1.5rem;
+    text-decoration: none;
+    font-size: 1.25rem;
+    margin-right: 1.75rem;
+    
+}
+#btn{
+    color: white;
+    font-size: 1.25rem;
+    background: linear-gradient(to right,#f41351,#eb1c23);
+    padding: 1rem 2.5rem 0.75rem;
+    border-radius: 1.5rem;
+    z-index: 1;
+}
+.left{
+    padding-top: 1rem;
+    margin-right: 2rem;
+}
+.logo{
+    margin-top: 0.75rem;
+    margin-right: 29rem;
+}
+ul li {
+
+    display: inline;
+  }
+  .two:hover ~ hr {
+    margin-left: 9.55rem;
+    background: red;
+    width:7.25rem;
+  
+    
+  }
+  
+  .three:hover ~ hr  {
+    margin-left: 19.925rem;
+    background: red;
+ 
+  }
+  .four:hover ~ hr  {
+    margin-left: 29.65rem;
+    background: red;
+    width: 8.25rem;
+ 
+  }
+  hr {
+    
+    height: .05rem;
+    width: 6.5rem;
+    background:#ff2125;
+    border: none;
+    transition: .40s ease-in-out;
+    
+  }
+  a{
+      padding-bottom: 0.5rem;
+  }
+  
+
+
