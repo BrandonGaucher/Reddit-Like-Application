@@ -1,5 +1,8 @@
 import React from 'react'
 import  '../styles/Nav.css'
+
+//router
+import {Link} from 'react-router-dom';
 const Nav = () =>{
    
     
@@ -23,7 +26,7 @@ const Nav = () =>{
                
                 </span>
                 <span className="right">
-                <a href="" id="btn" className="nav-a">LOGIN</a>
+                <Link to="/register" id="btn" className="nav-a">Sign up</Link>
                 </span>
             </div>
         </div>
