@@ -1,8 +1,7 @@
 .navbar{
     background-color: black;
-    
     height: 6rem;
-    position: fixed;
+    /*position: fixed;*/
     width: 100vw;
     transition: 0.75s ease-in-out;
     z-index: 999;
