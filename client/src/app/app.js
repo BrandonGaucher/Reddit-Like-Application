@@ -4,6 +4,7 @@ import Home from '../pages/Home'
 import Register from '../pages/Register'
 //components
 import Nav from '../components/nav';
+import Login from "../pages/Login";
 
 //Router
 import {
@@ -23,6 +24,9 @@ function App() {
           </Route>
           <Route path="/" exact>
             <Home />
+          </Route>
+          <Route path="/Login" exact>
+            <Login />
           </Route>
           </Switch>
     </Router>
