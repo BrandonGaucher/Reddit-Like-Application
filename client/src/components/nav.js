@@ -26,7 +26,7 @@ const Nav = () =>{
                
                 </span>
                 <span className="right">
-                <Link to="/register" id="btn" className="nav-a">Sign up</Link>
+                <Link to="/Login" id="btn" className="nav-a">Sign up</Link>
                 </span>
             </div>
         </div>
