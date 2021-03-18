@@ -1,0 +1,30 @@
+.even{
+    background-color: black;
+    color: #f2f2f2;
+
+}
+
+.odd{
+    background-color: black;
+    color: #f2f2f2;
+
+}
+
+.favourites{
+    border-style: groove;
+    border-width: 3px;
+    position: relative;
+    float: left;
+    margin-top: 6rem;
+
+
+}
+
+td, th{
+    padding: 10px;
+}
+
+tbody tr:hover {
+    background-color: #333333 ;
+    color: red;
+}
