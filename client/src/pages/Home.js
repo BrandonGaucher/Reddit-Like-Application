@@ -1,17 +1,15 @@
-import React from 'react'
+import React from "react";
 
 //page components
-import Nav from '../components/nav'
-import Feed from '../components/Feed'
 
-const Home = () =>{
+import Feed from "../components/Feed";
 
-    return(
-<div className="home">
-<Nav />
-<Feed />
-</div>
-    );
-}
+const Home = () => {
+  return (
+    <div className='home'>
+      <Feed />
+    </div>
+  );
+};
 
 export default Home;
