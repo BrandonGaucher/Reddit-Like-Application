@@ -39,35 +39,31 @@
 }
 .logo{
     margin-top: 0.75rem;
-    margin-right: 29rem;
+    margin-right: 50rem;
 }
 ul li {
 
     display: inline;
   }
   .two:hover ~ hr {
-    margin-left: 9.55rem;
+    margin-left: 7rem;
     background: red;
-    width:7.25rem;
+    width:5.75rem;
   
     
   }
   
   .three:hover ~ hr  {
-    margin-left: 19.925rem;
+    margin-left: 15.5rem;
     background: red;
+    width: 4.5rem;
  
   }
-  .four:hover ~ hr  {
-    margin-left: 29.65rem;
-    background: red;
-    width: 8.25rem;
- 
-  }
+
   hr {
     
     height: .05rem;
-    width: 6.5rem;
+    width: 4rem;
     background:#ff2125;
     border: none;
     transition: .40s ease-in-out;
