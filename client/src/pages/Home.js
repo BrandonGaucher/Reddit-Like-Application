@@ -1,18 +1,19 @@
-import React from 'react'
+import React from "react";
 
 //page components
-import Nav from '../components/nav'
 import Favourites from '../components/favourites'
 
-const Home = () =>{
+import Feed from "../components/Feed";
 
-    return(
-<div className="home">
 
-<Nav />
-<Favourites />
-</div>
-    );
-}
+
+const Home = () => {
+  return (
+    <div className='home'>
+      <Feed />
+    <Favourites />
+    </div>
+  );
+};
 
 export default Home;
