@@ -5,7 +5,7 @@ const RegisterForm = () => {
   const [usernameReg, setUsernameReg] = useState("");
   const [passwordReg, setPasswordReg] = useState("");
   const reg = () => {
-    Axios.post("http://localhost:8000/login", {
+    Axios.post("http://localhost:8000/register", {
       username: usernameReg,
       password: passwordReg,
     }).then((response) => {

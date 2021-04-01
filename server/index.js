@@ -2,7 +2,6 @@ const cors = require("cors");
 const express = require("express");
 const mysql = require("mysql");
 const bcrypt = require("bcryptjs");
-const check = require("express-validator/check");
 
 const app = express();
 
@@ -23,7 +22,8 @@ app.listen(process.env.REACT_APP_SERVER_PORT, () => {
 });
 
 //routes for login
-app.post("/login", (req, res) => {
+
+app.post("/register", (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
 
@@ -39,3 +39,5 @@ app.post("/login", (req, res) => {
     }
   );
 });
+
+app.post("/login");
