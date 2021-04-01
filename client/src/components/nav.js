@@ -3,14 +3,15 @@ import "../styles/Nav.css";
 
 //router
 import { Link } from "react-router-dom";
+
 const Nav = () => {
   return (
     <>
       <div className='nav'>
         <div className={"navbar"}>
           <div className='list'>
-            <span className='logo'>
-              <h1>LOGO</h1>
+            <span className='user'>
+              <h1>User's Name Goes Here</h1>
             </span>
             <span className='left'>
               <ul>
