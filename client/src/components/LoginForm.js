@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Axios from "axios";
+
 const LoginForm = () => {
   const [usernameLog, setUsernameLog] = useState("");
   const [passwordLog, setPasswordLog] = useState("");
@@ -31,7 +32,7 @@ const LoginForm = () => {
           onChange={(e) => {
             setPasswordLog(e.target.value);
           }}
-          settype='password'
+          type='password'
           placeholder='Password...'
         />
         <button className='button' onClick=''>

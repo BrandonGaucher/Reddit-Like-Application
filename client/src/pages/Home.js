@@ -5,6 +5,7 @@ import Favourites from '../components/favourites'
 
 import Feed from "../components/Feed";
 
+import SubmitPost from "../components/SubmitPost";
 
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
     <div className='home'>
       <Feed />
     <Favourites />
+    <SubmitPost />
     </div>
   );
 };
