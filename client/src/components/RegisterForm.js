@@ -27,6 +27,8 @@ const RegisterForm = () => {
           type='text'
           placeholder='Username...'
         />
+        <label>Email</label>
+        <input className='input' type='text' placeholder='Email...'></input>
         <label>Password</label>
         <input
           className='input'
