@@ -26,10 +26,11 @@ app.listen(process.env.REACT_APP_SERVER_PORT, () => {
 app.post("/register", (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
+  const email = req.body.email;
 
   pool.query(
-    "INSERT INTO users (username, password) VALUES (?,?)",
-    [username, password],
+    "INSERT INTO users (username, password,email) VALUES (?,?,?)",
+    [username, password, email],
     (err, results) => {
       if (err) {
         return res.send(err);

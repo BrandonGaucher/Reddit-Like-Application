@@ -4,10 +4,12 @@ import Axios from "axios";
 const RegisterForm = () => {
   const [usernameReg, setUsernameReg] = useState("");
   const [passwordReg, setPasswordReg] = useState("");
+  const [emailReg, setEmailReg] = useState("");
   const reg = () => {
     Axios.post("http://localhost:8000/register", {
       username: usernameReg,
       password: passwordReg,
+      email: emailReg,
     }).then((response) => {
       console.log(response);
     });
@@ -28,7 +30,14 @@ const RegisterForm = () => {
           placeholder='Username...'
         />
         <label>Email</label>
-        <input className='input' type='text' placeholder='Email...'></input>
+        <input
+          className='input'
+          onChange={(e) => {
+            setEmailReg(e.target.value);
+          }}
+          type='text'
+          placeholder='Email...'
+        />
         <label>Password</label>
         <input
           className='input'
