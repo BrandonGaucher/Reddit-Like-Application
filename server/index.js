@@ -2,6 +2,7 @@ const cors = require("cors");
 const express = require("express");
 const mysql = require("mysql");
 const bcrypt = require("bcryptjs");
+const saltRounds = 10;
 
 const app = express();
 
@@ -23,19 +24,31 @@ app.listen(process.env.REACT_APP_SERVER_PORT, () => {
 
 //routes for login
 
-app.post("/register", (req, res) => {
-  const username = req.body.username;
+app.post("/register", async (req, res) => {
   const password = req.body.password;
-  const email = req.body.email;
+  const encryptedPassword = await bcrypt.hash(password, saltRounds);
+
+  let users = {
+    username: req.body.username,
+    email: req.body.email,
+    password: encryptedPassword,
+  };
 
   pool.query(
-    "INSERT INTO users (username, password,email) VALUES (?,?,?)",
-    [username, password, email],
-    (err, results) => {
-      if (err) {
-        return res.send(err);
+    "INSERT INTO users SET ?",
+    users,
+    function (error, results, fields) {
+      if (error) {
+        res.send({
+          code: 400,
+          failed: "error occurred",
+          error: error,
+        });
       } else {
-        return res.send(results);
+        res.send({
+          code: 200,
+          success: "user registered sucessfully",
+        });
       }
     }
   );

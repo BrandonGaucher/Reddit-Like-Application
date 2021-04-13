@@ -11,7 +11,7 @@ const RegisterForm = () => {
       password: passwordReg,
       email: emailReg,
     }).then((response) => {
-      console.log(response);
+      alert("Registered Successfully!");
     });
   };
 
