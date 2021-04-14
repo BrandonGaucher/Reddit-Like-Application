@@ -54,4 +54,50 @@ app.post("/register", async (req, res) => {
   );
 });
 
-app.post("/login");
+app.post("/login", async (req, res) => {
+  const username = req.body.username;
+  const password = req.body.password; 
+
+
+//check whether user credentials are correct
+  pool.query(
+    "SELECT username, password FROM users WHERE username LIKE ?",
+    [username],
+    async function (err, results, fields) {
+      if (err) {
+        res.send({
+          code: 400,
+          failed: "error occurred",
+          error: err,
+        });
+      } else {
+        if(results.length > 0){
+          const comparePass = await bcrypt.compare(password, results[0].password)
+
+          if(comparePass){
+            res.send({
+           code: 200,
+           success: "user logged in successfully",
+            })
+          }else{
+            res.send({
+              "code":204,
+              "error": "There is a problem with password authentication"
+            })
+          }
+        } else {
+          res.send({
+            "code": 206,
+            "error": "Email does not exist"
+          });
+        }
+
+
+         
+      }
+    }
+  );
+}
+
+
+);
