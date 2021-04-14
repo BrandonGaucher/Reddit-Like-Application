@@ -72,6 +72,17 @@ ul li {
   a{
       padding-bottom: 0.5rem;
   }
-  
+  #filter {
+    background-color: black;
+    color: white;  
+    position: relative;
+    right: 30%;
+    height: 130%;
+}
+#searchData{
+    position: relative;
+    right: 30%;
+    height: 130%;
+}
 
 

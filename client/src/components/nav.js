@@ -10,6 +10,10 @@ const Nav = () => {
       <div className='nav'>
         <div className={"navbar"}>
           <div className='list'>
+          <span id="searchArea">
+              <input type="text" name="search" id="filter" size="50" placeholder="Empty search for all entries"></input>
+              <input type="button" value="Search" id="searchData"></input>
+            </span>
             <span className='user'>
               <h1>User's Name Goes Here</h1>
             </span>
