@@ -10,6 +10,7 @@ const LoginForm = () => {
       password: passwordLog,
     }).then((response) => {
       console.log(response);
+      //alert("Login Successful");
     });
   };
 
@@ -35,7 +36,7 @@ const LoginForm = () => {
           type='password'
           placeholder='Password...'
         />
-        <button className='button' onClick=''>
+        <button className='button' onClick={login}>
           Login
         </button>
       </div>
