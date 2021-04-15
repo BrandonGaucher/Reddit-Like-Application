@@ -1,88 +1,84 @@
-.navbar{
-    background-color: black;
-    height: 6rem;
-    /*position: fixed;*/
-    width: 100vw;
-    transition: 0.75s ease-in-out;
-    z-index: 999;
+.navbar {
+  background-color: white;
+  height: 4rem;
+  width: 100vw;
+  z-index: 999;
+  text-align: center;
 }
 
-.list{
-    display: inline-flex;
-    float: right;
-    margin-right: 2rem;
-    padding-top: 1.25rem;
-   
+.navbar a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 1rem 1rem;
+  text-decoration: none;
+  font-size: 1.5rem;
 }
 
-.nav-a{
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding-right: 1.5rem;
-    text-decoration: none;
-    font-size: 1.25rem;
-    margin-right: 1.75rem;
-    
+.navbar a:hover {
+  border-bottom: 2px solid #eb1c23;
 }
-#btn{
-    color: white;
-    font-size: 1.25rem;
-    background: linear-gradient(to right,#f41351,#eb1c23);
-    padding: 1rem 2.5rem 0.75rem;
-    border-radius: 1.5rem;
-    z-index: 1;
-}
-.left{
-    padding-top: 1rem;
-    margin-right: 2rem;
-}
-.logo{
-    margin-top: 0.75rem;
-    margin-right: 50rem;
-}
-ul li {
 
-    display: inline;
+#btn-signup {
+  color: white;
+  font-size: 1rem;
+  background: linear-gradient(to right, #f41351, #eb1c23);
+  padding: 0.5rem 1.5rem 0.75rem;
+  border-radius: 1.5rem;
+  z-index: 1;
+  float: right;
+  margin-right: 2rem;
+  height: 2rem;
+  margin-top: 1rem;
+}
+#btn-login {
+  color: #eb1c23;
+  font-size: 1rem;
+  background: white;
+  border: 1px solid #eb1c23;
+  padding: 0.5rem 1.5rem 0.75rem;
+  border-radius: 1.5rem;
+  z-index: 1;
+  float: right;
+  margin-right: 2rem;
+  height: 2rem;
+  margin-top: 1rem;
+}
+#btn-login:hover {
+  background: #eb1c2378;
+  border: 1px solid #eb1c2378;
+  color: white;
+  border: 1px solid white;
+}
+#btn-signup:hover {
+  background: #eb1c2378;
+  border: 1px solid white;
+}
+.navbar input[type="text"] {
+  border: 1px solid black;
+  border-radius: 0.25rem;
+  width: 32rem;
+  height: 2rem;
+  font-size: 1.25rem;
+  margin-left: 12rem;
+  margin-top: 1rem;
+  padding-left: 1rem;
+  background-color: #f2f2f2;
+}
+
+@media only screen and (max-width: 1200px) {
+  .navbar input[type="text"] {
+    width: 18rem;
   }
-  .two:hover ~ hr {
-    margin-left: 7rem;
-    background: red;
-    width:5.75rem;
-  
-    
-  }
-  
-  .three:hover ~ hr  {
-    margin-left: 15.5rem;
-    background: red;
-    width: 4.5rem;
- 
-  }
-
-  hr {
-    
-    height: .05rem;
-    width: 4rem;
-    background:#ff2125;
-    border: none;
-    transition: .40s ease-in-out;
-    
-  }
-  a{
-      padding-bottom: 0.5rem;
-  }
-  #filter {
-    background-color: black;
-    color: white;  
-    position: relative;
-    right: 30%;
-    height: 130%;
 }
-#searchData{
-    position: relative;
-    right: 30%;
-    height: 130%;
+@media only screen and (max-width: 1200px) {
+  .navbar input[type="text"] {
+    width: 12rem;
+  }
+  @media only screen and (max-width: 800px) {
+    .navbar input[type="text"] {
+      display: none;
+    }
+  }
 }
-
-

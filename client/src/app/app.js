@@ -6,19 +6,19 @@ import Profile from "../pages/Profile";
 //components
 import Nav from "../components/nav";
 import Login from "../pages/Login";
+
 import CreatePost from "../pages/CreatePost";
-import {UserContext} from "../components/UserContext";
+import { UserContext } from "../components/UserContext";
 //Router
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   const [user, setUser] = useState("Guest");
-  const usernameProvider = useMemo(() => ({user, setUser}), [user, setUser]);
+  const usernameProvider = useMemo(() => ({ user, setUser }), [user, setUser]);
   return (
     <div className='App'>
       <Router>
-
-        <UserContext.Provider value = {usernameProvider}>
+        <UserContext.Provider value={usernameProvider}>
           <Nav />
           <Switch>
             <Route path='/register' exact>
@@ -35,8 +35,6 @@ function App() {
             </Route>
           </Switch>
         </UserContext.Provider>
-
-       
       </Router>
     </div>
   );
