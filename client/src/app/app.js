@@ -2,6 +2,7 @@ import React, { useMemo, useState } from "react";
 //pages
 import Home from "../pages/Home";
 import Register from "../pages/Register";
+import Profile from "../pages/Profile";
 //components
 import Nav from "../components/nav";
 import Login from "../pages/Login";
@@ -16,6 +17,7 @@ function App() {
   return (
     <div className='App'>
       <Router>
+
         <UserContext.Provider value = {usernameProvider}>
           <Nav />
           <Switch>
@@ -33,6 +35,8 @@ function App() {
             </Route>
           </Switch>
         </UserContext.Provider>
+
+       
       </Router>
     </div>
   );

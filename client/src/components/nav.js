@@ -39,7 +39,11 @@ const Nav = () => {
                     ABOUT
                   </a>
                 </li>
-
+                <li className='four'>
+                <Link to='/profile' className='nav-a' href=''>
+                  MY PROFILE
+                  </Link>
+              </li>
                 <hr className='nav-hr' />
               </ul>
             </span>
