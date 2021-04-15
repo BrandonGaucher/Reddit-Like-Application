@@ -69,6 +69,7 @@ app.post("/login", async (req, res) => {
           code: 400,
           failed: "error occurred",
           error: err,
+          correct: false,
         });
       } else {
         if(results.length > 0){
@@ -78,17 +79,20 @@ app.post("/login", async (req, res) => {
             res.send({
            code: 200,
            success: "user logged in successfully",
+           correct: true,
             })
           }else{
             res.send({
-              "code":204,
-              "error": "There is a problem with password authentication"
+               code: 204,
+              error: "There is a problem with password authentication",
+              correct: false,
             })
           }
         } else {
           res.send({
-            "code": 206,
-            "error": "Email does not exist"
+            code: 206,
+            error: "Email does not exist",
+            correct: false,
           });
         }
 

@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../styles/Nav.css";
 
 //router
 import { Link } from "react-router-dom";
+import { UserContext } from "./UserContext";
+
+//get the current user
 
 const Nav = () => {
+  const {user, setUser} = useContext(UserContext);
   return (
     <>
       <div className='nav'>
@@ -15,7 +19,8 @@ const Nav = () => {
               <input type="button" value="Search" id="searchData"></input>
             </span>
             <span className='user'>
-              <h1>User's Name Goes Here</h1>
+              
+              <h1>{user}</h1>
             </span>
             <span className='left'>
               <ul>
