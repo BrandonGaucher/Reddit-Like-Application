@@ -40,14 +40,18 @@ const CreatePostForm = () => {
           required
         />
         <label>Category </label>
-        <div class="custom-select">
-        <select onChange={(e)=>{setCategoryReg(e.target.value)}}>
-          <option value='0'>Gaming</option>
-          <option value='1'>Sports</option>
-          <option value='2'>Food</option>
-          <option value='3'>Jokes</option>
-          <option value='4'>Music</option>
-        </select>
+        <div class='custom-select'>
+          <select
+            onChange={(e) => {
+              setCategoryReg(e.target.value);
+            }}
+          >
+            <option value='gaming'>Gaming</option>
+            <option value='sports'>Sports</option>
+            <option value='food'>Food</option>
+            <option value='jokes'>Jokes</option>
+            <option value='music'>Music</option>
+          </select>
         </div>
         <br></br>
         <label>Text</label>

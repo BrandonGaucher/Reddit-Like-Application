@@ -22,7 +22,7 @@ app.listen(process.env.REACT_APP_SERVER_PORT, () => {
   );
 });
 
-//routes for login
+//routes for login and register
 
 app.post("/register", async (req, res) => {
   const password = req.body.password;
@@ -56,10 +56,9 @@ app.post("/register", async (req, res) => {
 
 app.post("/login", async (req, res) => {
   const username = req.body.username;
-  const password = req.body.password; 
+  const password = req.body.password;
 
-
-//check whether user credentials are correct
+  //check whether user credentials are correct
   pool.query(
     "SELECT username, password FROM users WHERE username LIKE ?",
     [username],
@@ -72,21 +71,24 @@ app.post("/login", async (req, res) => {
           correct: false,
         });
       } else {
-        if(results.length > 0){
-          const comparePass = await bcrypt.compare(password, results[0].password)
+        if (results.length > 0) {
+          const comparePass = await bcrypt.compare(
+            password,
+            results[0].password
+          );
 
-          if(comparePass){
+          if (comparePass) {
             res.send({
-           code: 200,
-           success: "user logged in successfully",
-           correct: true,
-            })
-          }else{
+              code: 200,
+              success: "user logged in successfully",
+              correct: true,
+            });
+          } else {
             res.send({
-               code: 204,
+              code: 204,
               error: "There is a problem with password authentication",
               correct: false,
-            })
+            });
           }
         } else {
           res.send({
@@ -95,25 +97,24 @@ app.post("/login", async (req, res) => {
             correct: false,
           });
         }
-
-
-         
       }
     }
   );
-}
-);
+});
 
 app.post("/createpost", async (req, res) => {
   const title = req.body.title;
   const text = req.body.text;
+
   var postUsername = req.body.user;
   var category = req.body.category;
 
 
   pool.query(
+
     "INSERT INTO posts (title, description, category, username, post_date) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP()) ",
     [title,text, category, postUsername],
+
     function (error, results, fields) {
       if (error) {
         res.send({
