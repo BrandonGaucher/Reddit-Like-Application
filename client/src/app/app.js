@@ -5,6 +5,7 @@ import Register from "../pages/Register";
 import Profile from "../pages/Profile";
 //components
 import Nav from "../components/nav";
+import Footer from "../components/Footer"
 import Login from "../pages/Login";
 import CreatePost from "../pages/CreatePost";
 import {UserContext} from "../components/UserContext";
@@ -20,6 +21,7 @@ function App() {
 
         <UserContext.Provider value = {usernameProvider}>
           <Nav />
+          <Footer />
           <Switch>
             <Route path='/register' exact>
               <Register />
@@ -33,6 +35,9 @@ function App() {
             <Route path='/createpost' exact>
               <CreatePost />
             </Route>
+            {/* <Route path='/profile' exact>
+              <Profile />
+            </Route> */}
           </Switch>
         </UserContext.Provider>
 
