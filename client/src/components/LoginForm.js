@@ -16,6 +16,9 @@ const LoginForm = () => {
       if(response.data.correct){
         setUser(usernameLog);
       }
+      else{
+
+      }
     });
   };
 
@@ -42,9 +45,21 @@ const LoginForm = () => {
           type='password'
           placeholder='Password...'
         />
+        {user == "Guest" ? (
         <button className='button' onClick={login}>
           Login
         </button>
+        ) : (
+          <button className='button' onClick={
+            async() => {
+              setUser("Guest");
+            }
+          }>
+            Logout
+          </button>
+        )
+
+        }
       </div>
     </div>
   );
