@@ -52,20 +52,20 @@ const RegisterForm = () => {
           />
           <div>
             {errors.username && errors.username.type === "required" && (
-              <span class='alert'>This field is required</span>
+              <span className='alert'>This field is required</span>
             )}
             {errors.username && errors.username.type === "pattern" && (
-              <span class='alert'>
+              <span className='alert'>
                 Username can only contain letters and numbers
               </span>
             )}
             {errors.username && errors.username.type === "minLength" && (
-              <span class='alert'>
+              <span className='alert'>
                 Username must contain at least 4 letters
               </span>
             )}
             {errors.username && errors.username.type === "maxLength" && (
-              <span class='alert'>
+              <span className='alert'>
                 Username can only contain a max of 20 letters
               </span>
             )}
@@ -84,7 +84,7 @@ const RegisterForm = () => {
           />
           <div>
             {errors.email && errors.email.type === "required" && (
-              <span class='alert'>This field is required</span>
+              <span className='alert'>This field is required</span>
             )}
           </div>
           <label>Password</label>
@@ -103,20 +103,44 @@ const RegisterForm = () => {
           />
           <div>
             {errors.password && errors.password.type === "minLength" && (
-              <span class='alert'>Password must be at least 6 characters</span>
+              <span className='alert'>
+                Password must be at least 6 characters
+              </span>
             )}
             {errors.password && errors.password.type === "maxLength" && (
-              <span class='alert'>
+              <span className='alert'>
                 Password must be less than 20 characters
               </span>
             )}
 
             {errors.password && errors.password.type === "required" && (
-              <span class='alert'>This field is required</span>
+              <span className='alert'>This field is required</span>
             )}
           </div>
+          <label>Re-enter password</label>
+          <input
+            className='input'
+            {...register("password_check", {
+              required: true,
+              minLength: 6,
+              maxLength: 20,
+              validate: (value) => value === passwordReg,
+            })}
+            type='password'
+            placeholder='Password...'
+          />
+          <div>
+            {errors.password_check &&
+              errors.password_check.type === "required" && (
+                <span className='alert'>This field is required</span>
+              )}
+            {errors.password_check &&
+              errors.password_check.type === "validate" && (
+                <span className='alert'>The passwords do not match</span>
+              )}
+          </div>
 
-          <input class='button' type='submit' />
+          <input className='button' type='submit' />
         </form>
       </div>
     </div>

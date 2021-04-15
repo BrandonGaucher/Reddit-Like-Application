@@ -5,7 +5,7 @@ import { UserContext } from "./UserContext";
 const LoginForm = () => {
   const [usernameLog, setUsernameLog] = useState("");
   const [passwordLog, setPasswordLog] = useState("");
-  const {user, setUser} = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
   const login = () => {
     Axios.post("http://localhost:8000/login", {
       username: usernameLog,
@@ -13,7 +13,7 @@ const LoginForm = () => {
     }).then((response) => {
       console.log(response);
       alert(response.data.correct);
-      if(response.data.correct){
+      if (response.data.correct) {
         setUser(usernameLog);
       }
       else{
