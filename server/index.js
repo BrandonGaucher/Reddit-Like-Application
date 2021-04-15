@@ -108,11 +108,12 @@ app.post("/createpost", async (req, res) => {
   const title = req.body.title;
   const text = req.body.text;
   var postUsername = "benfitz";
+  var category = req.body.category;
 
 
   pool.query(
-    "INSERT INTO posts (title, description, username, post_date) VALUES (?, ?, ?, CURRENT_TIMESTAMP()) ",
-    [title,text, postUsername],
+    "INSERT INTO posts (title, description, category, username, post_date) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP()) ",
+    [title,text, category, postUsername],
     function (error, results, fields) {
       if (error) {
         res.send({
