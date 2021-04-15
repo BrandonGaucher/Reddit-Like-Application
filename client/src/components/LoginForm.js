@@ -1,16 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Axios from "axios";
+import { UserContext } from "./UserContext";
 
 const LoginForm = () => {
   const [usernameLog, setUsernameLog] = useState("");
   const [passwordLog, setPasswordLog] = useState("");
+  const {user, setUser} = useContext(UserContext);
   const login = () => {
     Axios.post("http://localhost:8000/login", {
       username: usernameLog,
       password: passwordLog,
     }).then((response) => {
       console.log(response);
-      //alert("Login Successful");
+      alert(response.data.correct);
+      if(response.data.correct){
+        setUser(usernameLog);
+      }
     });
   };
 
