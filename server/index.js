@@ -98,6 +98,30 @@ app.post("/login", async (req, res) => {
     }
   );
 }
-
-
 );
+
+app.post("/createpost", async (req, res) => {
+  const title = req.body.title;
+  const text = req.body.text;
+  var postUsername = "benfitz";
+
+
+  pool.query(
+    "INSERT INTO posts (title, description, username, post_date) VALUES (?, ?, ?, CURRENT_TIMESTAMP()) ",
+    [title,text, postUsername],
+    function (error, results, fields) {
+      if (error) {
+        res.send({
+          code: 400,
+          failed: "error occurred",
+          error: error,
+        });
+      } else {
+        res.send({
+          code: 200,
+          success: "post registered sucessfully",
+        });
+      }
+    }
+  );
+});

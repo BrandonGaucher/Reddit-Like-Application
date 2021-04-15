@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
     `title` VARCHAR(255) NOT NULL,
     `description` VARCHAR(255) NOT NULL,
-    `category` VARCHAR(255) NOT NULL,
+    `category` VARCHAR(255) DEFAULT 'General',
     `post_date` DATE NOT NULL,
     `username`  VARCHAR(255) NOT NULL,
     PRIMARY KEY (id),
