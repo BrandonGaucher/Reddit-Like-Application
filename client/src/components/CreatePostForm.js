@@ -38,6 +38,7 @@ const CreatePostForm = () => {
               setCategoryReg(e.target.value);
             }}
           >
+            <option value="" disabled selected>Select your category</option>
             <option value='gaming'>Gaming</option>
             <option value='sports'>Sports</option>
             <option value='food'>Food</option>
