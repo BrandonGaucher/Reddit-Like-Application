@@ -107,7 +107,7 @@ app.post("/login", async (req, res) => {
 app.post("/createpost", async (req, res) => {
   const title = req.body.title;
   const text = req.body.text;
-  var postUsername = "benfitz";
+  var postUsername = req.body.user;
   var category = req.body.category;
 
 

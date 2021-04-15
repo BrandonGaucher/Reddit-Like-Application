@@ -1,16 +1,24 @@
-import React, { useState } from "react";
+import React, {useContext, useState } from "react";
 import Axios from "axios";
 import "../styles/CreateSubmitPost.css";
+import { UserContext } from "./UserContext";
 
 const CreatePostForm = () => {
   const [titleReg, setTitleReg] = useState("");
   const [categoryReg, setCategoryReg] = useState("");
   const [textReg, setTextReg] = useState("");
+  const [userReg, setUserReg] = useState("");
+  const {user, setUser} = useContext(UserContext);
+  var username = JSON.stringify(user);
+  username = username.slice(1, -1);
+  //console.log(username);
   const reg = () => {
+    setUserReg(username);
     Axios.post("http://localhost:8000/createpost", {
       title: titleReg,
       category: categoryReg,
       text: textReg,
+      user: userReg,
     }).then((response) => {
       console.log(response);
     });
