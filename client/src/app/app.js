@@ -2,6 +2,7 @@ import React from "react";
 //pages
 import Home from "../pages/Home";
 import Register from "../pages/Register";
+import Profile from "../pages/Profile";
 //components
 import Nav from "../components/nav";
 import Login from "../pages/Login";
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <Route path='/createpost' exact>
             <CreatePost />
+          </Route>
+          <Route path='/profile' exact>
+            <Profile />
           </Route>
         </Switch>
       </Router>

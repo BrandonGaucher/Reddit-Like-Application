@@ -28,6 +28,7 @@ const LoginForm = () => {
           type='text'
           placeholder='Username...'
         />
+        <label>Password</label>
         <input
           className='input'
           onChange={(e) => {
