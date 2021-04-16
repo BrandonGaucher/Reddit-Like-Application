@@ -1,5 +1,5 @@
 .footer{
-    background-color: black;
+    background-color: white;
     height: 1.5rem;
     /*position: fixed;*/
     position: fixed;
@@ -10,10 +10,13 @@
 }
 
 .foo{
-    color: white;
+    color: black;
     padding-right: 1.5rem;
     text-decoration: none;
     font-size: 12px;
     margin-right: 1.75rem;
-    
+}
+
+.foo:hover{
+  color:#eb1c23;
 }
