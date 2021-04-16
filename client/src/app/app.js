@@ -3,9 +3,11 @@ import React, { useMemo, useState } from "react";
 import Home from "../pages/Home";
 import Register from "../pages/Register";
 import Profile from "../pages/Profile";
+import AdminUsers from "../pages/AdminUsers";
+import AdminPosts from "../pages/AdminPosts";
 //components
 import Nav from "../components/nav";
-import Footer from "../components/Footer"
+import Footer from "../components/Footer";
 import Login from "../pages/Login";
 
 import CreatePost from "../pages/CreatePost";
@@ -20,7 +22,6 @@ function App() {
     <div className='App'>
       <Router>
         <UserContext.Provider value={usernameProvider}>
-          <Nav />
           <Footer />
           <Switch>
             <Route path='/register' exact>
@@ -34,6 +35,12 @@ function App() {
             </Route>
             <Route path='/createpost' exact>
               <CreatePost />
+            </Route>
+            <Route path='/admin/users' exact>
+              <AdminUsers />
+            </Route>
+            <Route path='/admin/posts' exact>
+              <AdminPosts />
             </Route>
             {/* <Route path='/profile' exact>
               <Profile />

@@ -110,13 +110,11 @@ app.post("/createpost", async (req, res) => {
   var postUsername = req.body.user;
   var category = req.body.category;
 
-
   pool.query(
-
     "INSERT INTO posts (title, description, category, username, post_date) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP()) ",
-    [title,text, category, postUsername],
+    [title, text, category, postUsername],
 
-    function (error, results, fields) {
+    function (error, res, fields) {
       if (error) {
         res.send({
           code: 400,
@@ -131,4 +129,54 @@ app.post("/createpost", async (req, res) => {
       }
     }
   );
+});
+
+//admin routes
+
+//get all users
+app.get("/userlist", async (req, res, next) => {
+  pool.query("SELECT * FROM users", async function (err, data, fields) {
+    if (err) throw err;
+    res.send({ userData: data });
+  });
+});
+
+// get all posts
+app.get("/postlist", async (req, res, next) => {
+  pool.query("SELECT * FROM posts", async function (err, data, fields) {
+    if (err) throw err;
+    res.send({ postData: data });
+  });
+});
+//remove post
+app.post("/removePost", (req, res) => {
+  const post = req.body.postToRemove;
+  var sql = "DELETE FROM posts WHERE id = '" + post + "'";
+  pool.query(sql, function (err, data) {
+    if (err) throw err;
+    res.send({ postData: data });
+  });
+});
+
+//disable users
+
+app.post("/disableUser", (req, res) => {
+  const user = req.body.userToDisable;
+  var sql =
+    "UPDATE users SET permissions = 'disabled' WHERE username = '" + user + "'";
+  pool.query(sql, function (err, data) {
+    if (err) throw err;
+    res.send({ userData: data });
+  });
+});
+
+//enable users
+app.post("/enableUser", (req, res) => {
+  const user = req.body.userToEnable;
+  var sql =
+    "UPDATE users SET permissions = 'enabled' WHERE username = '" + user + "'";
+  pool.query(sql, function (err, data) {
+    if (err) throw err;
+    res.send({ userData: data });
+  });
 });
