@@ -12,12 +12,12 @@ const LoginForm = () => {
       password: passwordLog,
     }).then((response) => {
       console.log(response);
-      alert(response.data.correct);
       if (response.data.correct) {
+        alert("Logged in successfully");
         setUser(usernameLog);
       }
       else{
-
+        alert("There was a problem with logging in");
       }
     });
   };
