@@ -32,6 +32,11 @@
   height: 2rem;
   margin-top: 1rem;
 }
+
+#btn-signup:hover {
+  background: #eb1c2378;
+  border: 1px solid white;
+}
 #btn-login {
   color: #eb1c23;
   font-size: 1rem;
@@ -51,10 +56,28 @@
   color: white;
   border: 1px solid white;
 }
-#btn-signup:hover {
+
+#btn-profile {
+  color: #eb1c23;
+  font-size: 1rem;
+  background: white;
+  border: 1px solid #eb1c23;
+  padding: 0.5rem 1.5rem 0.75rem;
+  border-radius: 1.5rem;
+  z-index: 1;
+  float: right;
+  margin-right: 2rem;
+  height: 2rem;
+  margin-top: 1rem;
+}
+#btn-profile:hover {
   background: #eb1c2378;
+  border: 1px solid #eb1c2378;
+  color: white;
   border: 1px solid white;
 }
+
+
 .navbar input[type="text"] {
   border: 1px solid black;
   border-radius: 0.25rem;

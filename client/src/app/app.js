@@ -43,9 +43,9 @@ function App() {
             <Route path='/admin/posts' exact>
               <AdminPosts />
             </Route>
-            {/* <Route path='/profile' exact>
+            <Route path='/profile' exact>
               <Profile />
-            </Route> */}
+            </Route>
           </Switch>
         </UserContext.Provider>
       </Router>
