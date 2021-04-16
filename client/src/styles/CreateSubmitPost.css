@@ -10,9 +10,9 @@
   font-size: 16px;
   transition-duration: 0.4s;
   /* float: right; */
-  position: absolute;
-  right: 345px;
-  top: 50;
+  position: relative;
+  left: 0;
+  /* top: 50; */
 }
 
 .create:hover {
