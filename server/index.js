@@ -147,6 +147,19 @@ app.get("/postlist", async (req, res, next) => {
     res.send({ postData: data });
   });
 });
+
+//get category of posts
+app.post("/categorydata", async (req, res, next) => {
+  const category = req.body.category;
+  pool.query(
+    "SELECT * FROM posts WHERE category LIKE ?",
+    [category],
+    async function (err, data, fields) {
+      if (err) throw err;
+      res.send({ postData: data });
+    }
+  );
+});
 //remove post
 app.post("/removePost", (req, res) => {
   const post = req.body.postToRemove;
