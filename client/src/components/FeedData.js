@@ -25,6 +25,6 @@ const FeedData = (props) => {
     }
   };
 
-  return <>{displayPosts(props)}</>;
+  return <div className='feed'>{displayPosts(props)}</div>;
 };
 export default FeedData;

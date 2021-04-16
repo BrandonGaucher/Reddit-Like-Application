@@ -5,6 +5,7 @@ import Register from "../pages/Register";
 import Profile from "../pages/Profile";
 import AdminUsers from "../pages/AdminUsers";
 import AdminPosts from "../pages/AdminPosts";
+
 //components
 import Nav from "../components/nav";
 import Footer from "../components/Footer";
@@ -36,7 +37,7 @@ function App() {
             <Route path='/createpost' exact>
               <CreatePost />
             </Route>
-            <Route path='/admin/users' exact>
+            <Route path='/admin' exact>
               <AdminUsers />
             </Route>
             <Route path='/admin/posts' exact>
