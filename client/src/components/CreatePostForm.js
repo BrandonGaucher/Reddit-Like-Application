@@ -10,6 +10,7 @@ const CreatePostForm = () => {
   const [userReg, setUserReg] = useState("");
   const {user, setUser} = useContext(UserContext);
   const username = JSON.stringify(user).slice(1,-1);
+  const regForm = document.getElementById
   //console.log(username);
 
   const reg = () => {
@@ -20,53 +21,66 @@ const CreatePostForm = () => {
       user: username,
     }).then((response) => {
       console.log(response);
+      document.getElementById("postForm").reset();
     });
   };
 
   return (
     <div className='CreatePost'>
-      <div className='box'>
-        <h2>Create Post</h2>
-        <br></br>
-        <label>Title</label>
-        <input
-          className='titlebox'
-          onChange={(e) => {
-            setTitleReg(e.target.value);
-          }}
-          type='text'
-          placeholder='Title...'
-          required
-        />
-        <label>Category </label>
-        <div class='custom-select'>
-          <select
+      <form id="postForm"onSubmit={
+      (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if(username == "Guest"){
+          alert("You have to sign in before posting");
+        }
+        else{
+          reg();
+        }
+      }
+    }>
+        <div className='box'>
+          <h2>Create Post</h2>
+          <br></br>
+          <label>Title</label>
+          <input
+            className='titlebox'
             onChange={(e) => {
-              setCategoryReg(e.target.value);
+              setTitleReg(e.target.value);
             }}
-          >
-            <option value="" disabled selected>Select your category</option>
-            <option value='gaming'>Gaming</option>
-            <option value='sports'>Sports</option>
-            <option value='food'>Food</option>
-            <option value='jokes'>Jokes</option>
-            <option value='music'>Music</option>
-          </select>
+            type='text'
+            placeholder='Title...'
+            required
+          />
+          <label>Category </label>
+          <div class='custom-select'>
+            <select className=""
+              onChange={(e) => {
+                setCategoryReg(e.target.value);
+              }}
+            >
+              <option value="" disabled selected>Select your category</option>
+              <option value='gaming'>Gaming</option>
+              <option value='sports'>Sports</option>
+              <option value='food'>Food</option>
+              <option value='jokes'>Jokes</option>
+              <option value='music'>Music</option>
+            </select>
+          </div>
+          <br></br>
+          <label>Text</label>
+          <textarea
+            className='textbox'
+            onChange={(e) => {
+              setTextReg(e.target.value);
+            }}
+            type='text'
+            placeholder='Text...'
+            required
+          />
+          <input type="submit" value="Submit" className='button'/>
         </div>
-        <br></br>
-        <label>Text</label>
-        <textarea
-          className='textbox'
-          onChange={(e) => {
-            setTextReg(e.target.value);
-          }}
-          type='text'
-          placeholder='Text...'
-        />
-        <button className='button' onClick={reg}>
-          Submit
-        </button>
-      </div>
+      </form>
     </div>
   );
 };
