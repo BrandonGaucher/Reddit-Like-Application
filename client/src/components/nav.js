@@ -26,6 +26,13 @@ const Nav = () => {
         <Link to='/register' id='btn-signup' className='nav-a'>
           Sign up
         </Link>
+        {user == "Guest" ? (
+          <br></br>
+          ) : (
+               <Link to='/profile' id='btn-profile' className='nav-a'>
+            My Profile
+            </Link>
+          )}
       </div>
     </>
   );
