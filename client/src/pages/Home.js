@@ -1,7 +1,7 @@
 import React from "react";
+import Categories from "../components/Categories";
 
 //page components
-import Favourites from '../components/favourites'
 
 import Feed from "../components/Feed";
 
@@ -12,8 +12,8 @@ const Home = () => {
   return (
     <div className='home'>
       <Feed />
-    <Favourites />
-    <SubmitPost />
+    <Categories />
+    {/* <SubmitPost /> */}
     </div>
   );
 };

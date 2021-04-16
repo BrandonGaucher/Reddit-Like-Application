@@ -10,9 +10,9 @@
   font-size: 16px;
   transition-duration: 0.4s;
   /* float: right; */
-  position: absolute;
-  right: 345px;
-  top: 50;
+  position: relative;
+  left: 0;
+  /* top: 50; */
 }
 
 .create:hover {
@@ -20,7 +20,7 @@
 }
 
 .CreatePost {
-  background-color: white;
+  background-color: rgb(223, 223, 223);
   z-index: 999;
 }
 
@@ -62,6 +62,18 @@
   box-shadow: 0 0 0 1pt darkgrey;
 }
 
+.titlebox[type=text]:focus {
+  width: 100%;
+  background-color: white;
+  padding: 14px 20px;
+  /* font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px; */
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1pt rgb(255, 130, 130);
+}
+
 .textbox {
   width: 100%;
   background-color: white;
@@ -74,4 +86,18 @@
   border: none;
   border-radius: 4px;
   box-shadow: 0 0 0 1pt darkgrey;
+}
+
+.textbox[type=text]:focus {
+  width: 100%;
+  background-color: white;
+  padding: 14px 20px;
+  /* font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px; */
+  height: 150px;
+  resize: vertical;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1pt rgb(255, 130, 130);
 }
