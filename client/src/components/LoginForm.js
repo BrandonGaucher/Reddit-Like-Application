@@ -15,52 +15,58 @@ const LoginForm = () => {
       if (response.data.correct) {
         alert("Logged in successfully");
         setUser(usernameLog);
-      }
-      else{
-        alert("There was a problem with logging in");
+        document.getElementById("loginF").reset();
       }
     });
   };
 
   return (
     <div className='Login'>
-      <div className='box'>
-        <h2>Login</h2>
-        <br></br>
-        <label>Username</label>
-        <input
-          className='input'
-          onChange={(e) => {
-            setUsernameLog(e.target.value);
-          }}
-          type='text'
-          placeholder='Username...'
-        />
-        <label>Password</label>
-        <input
-          className='input'
-          onChange={(e) => {
-            setPasswordLog(e.target.value);
-          }}
-          type='password'
-          placeholder='Password...'
-        />
-        {user == "Guest" ? (
-        <button className='button' onClick={login}>
-          Login
-        </button>
-        ) : (
-          <button className='button' onClick={
-            async() => {
-              setUser("Guest");
-            }
-          }>
-            Logout
-          </button>
-        )
-
+      <form id="loginF" onSubmit={
+        (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          login();
         }
-      </div>
+      }>
+        <div className='box'>
+          <h2>Login</h2>
+          <br></br>
+          <label>Username</label>
+          <input
+            className='input'
+            onChange={(e) => {
+              setUsernameLog(e.target.value);
+            }}
+            type='text'
+            placeholder='Username...'
+            required
+          />
+          <label>Password</label>
+          <input
+            className='input'
+            onChange={(e) => {
+              setPasswordLog(e.target.value);
+            }}
+            type='password'
+            placeholder='Password...'
+            required
+          />
+          {user == "Guest" ? (
+          <input type="submit" value="Login" className='button'/>
+          ) : (
+            <button className='button' onClick={
+              async() => {
+                setUser("Guest");
+              }
+            }>
+              Logout
+            </button>
+          )
+
+          }
+        </div>
+      </form>
     </div>
   );
 };
