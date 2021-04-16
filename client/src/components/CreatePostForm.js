@@ -9,16 +9,15 @@ const CreatePostForm = () => {
   const [textReg, setTextReg] = useState("");
   const [userReg, setUserReg] = useState("");
   const {user, setUser} = useContext(UserContext);
-  var username = JSON.stringify(user);
-  username = username.slice(1, -1);
+  const username = JSON.stringify(user).slice(1,-1);
   //console.log(username);
+
   const reg = () => {
-    setUserReg(username);
     Axios.post("http://localhost:8000/createpost", {
       title: titleReg,
       category: categoryReg,
       text: textReg,
-      user: userReg,
+      user: username,
     }).then((response) => {
       console.log(response);
     });
