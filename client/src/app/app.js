@@ -46,9 +46,6 @@ function App() {
             </Route>
 
             <Route path='/category/:id' component={Category} />
-
-              <Profile />
-            </Route>
           </Switch>
         </UserContext.Provider>
       </Router>
