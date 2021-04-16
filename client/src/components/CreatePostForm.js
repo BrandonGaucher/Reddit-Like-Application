@@ -10,10 +10,10 @@ const CreatePostForm = () => {
   const [userReg, setUserReg] = useState("");
   const {user, setUser} = useContext(UserContext);
   const username = JSON.stringify(user).slice(1,-1);
-  const regForm = document.getElementById
   //console.log(username);
 
   const reg = () => {
+    document.getElementById("postForm").reset();
     Axios.post("http://localhost:8000/createpost", {
       title: titleReg,
       category: categoryReg,
@@ -21,7 +21,6 @@ const CreatePostForm = () => {
       user: username,
     }).then((response) => {
       console.log(response);
-      document.getElementById("postForm").reset();
     });
   };
 
