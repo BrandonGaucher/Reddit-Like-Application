@@ -5,9 +5,10 @@ import Register from "../pages/Register";
 import Profile from "../pages/Profile";
 import AdminUsers from "../pages/AdminUsers";
 import AdminPosts from "../pages/AdminPosts";
+import Category from "../pages/Category";
 
 //components
-import Nav from "../components/nav";
+
 import Footer from "../components/Footer";
 import Login from "../pages/Login";
 
@@ -43,7 +44,9 @@ function App() {
             <Route path='/admin/posts' exact>
               <AdminPosts />
             </Route>
-            <Route path='/profile' exact>
+
+            <Route path='/category/:id' component={Category} />
+
               <Profile />
             </Route>
           </Switch>

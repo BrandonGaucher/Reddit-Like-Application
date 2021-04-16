@@ -28,6 +28,10 @@ const AdminPosts = () => {
       <div class='main'>
         <h1>Admin Dashboard</h1>
         <h2>All posts</h2>
+        <form action=''>
+          <input type='text' placeholder='Search..'></input>
+          <button type='submit'>Search</button>
+        </form>
         <PostData posts={posts} />
       </div>
     </>

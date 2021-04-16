@@ -8,7 +8,8 @@ const UserData = (props) => {
       userToDisable: userDisable,
     }).then((response) => {
       alert("Disabled " + userDisable + "!");
-      console.log(response);
+
+      window.location.reload();
     });
   };
 
@@ -18,7 +19,7 @@ const UserData = (props) => {
       userToEnable: userEnable,
     }).then((response) => {
       alert("Enable " + userEnable + "!");
-      console.log(response);
+      window.location.reload();
     });
   };
 

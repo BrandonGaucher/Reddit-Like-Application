@@ -8,7 +8,7 @@ const PostData = (props) => {
       postToRemove: postToRemove,
     }).then((response) => {
       alert("Removed post: " + postToRemove + "!");
-      console.log(response);
+      window.location.reload();
     });
   };
 
@@ -26,7 +26,6 @@ const PostData = (props) => {
 
     if (posts.length > 0) {
       return posts.map((post, index) => {
-        console.log(post);
         return (
           <tr className='post' key={post._id}>
             <td className='title'> {post.title}</td>
