@@ -19,7 +19,13 @@ const RegisterForm = () => {
       password: passwordReg,
       email: emailReg,
     }).then((response) => {
-      alert("Registered Successfully!");
+      console.log(response);
+      if(response.data.correct){
+        alert("Registered Successfully!");
+      }
+      else{
+        alert("There was a problem with registration");
+      }
     });
   };
 

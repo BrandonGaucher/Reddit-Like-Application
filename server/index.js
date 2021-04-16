@@ -48,6 +48,7 @@ app.post("/register", async (req, res) => {
         res.send({
           code: 200,
           success: "user registered sucessfully",
+          correct: true,
         });
       }
     }

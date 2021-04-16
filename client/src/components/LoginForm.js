@@ -12,9 +12,12 @@ const LoginForm = () => {
       password: passwordLog,
     }).then((response) => {
       console.log(response);
-      alert(response.data.correct);
       if (response.data.correct) {
+        alert("Logged in successfully");
         setUser(usernameLog);
+      }
+      else{
+        alert("There was a problem with logging in");
       }
     });
   };
@@ -42,9 +45,21 @@ const LoginForm = () => {
           type='password'
           placeholder='Password...'
         />
+        {user == "Guest" ? (
         <button className='button' onClick={login}>
           Login
         </button>
+        ) : (
+          <button className='button' onClick={
+            async() => {
+              setUser("Guest");
+            }
+          }>
+            Logout
+          </button>
+        )
+
+        }
       </div>
     </div>
   );
