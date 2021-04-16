@@ -1,11 +1,9 @@
 import React, { useContext, useState, useEffect, props } from "react";
-import "../styles/Feed.css";
+import PostData from "../components/PostData";
+import "../styles/Admin.css";
 import Axios from "axios";
-import FeedData from "../components/FeedData";
-
-//router
 import { Link } from "react-router-dom";
-const Feed = () => {
+const AdminPosts = () => {
   const [posts, getPosts] = useState("");
 
   useEffect(() => {
@@ -23,10 +21,17 @@ const Feed = () => {
 
   return (
     <>
-      {" "}
-      <FeedData posts={posts} />
+      <div class='sidenav'>
+        <Link to='/admin/users'>Users</Link>
+        <Link to='/admin/posts'>Posts</Link>
+      </div>
+      <div class='main'>
+        <h1>Admin Dashboard</h1>
+        <h2>All posts</h2>
+        <PostData posts={posts} />
+      </div>
     </>
   );
 };
 
-export default Feed;
+export default AdminPosts;

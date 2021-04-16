@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS `users` (
     `username` VARCHAR(255) NOT NULL,
     `password` VARCHAR(255) NOT NULL,
     `email` VARCHAR(255) NOT NULL,
+    `permissions` VARCHAR(10) DEFAULT 'enabled',
     PRIMARY KEY (username))
     ENGINE=INNODB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
