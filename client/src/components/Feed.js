@@ -1,22 +1,32 @@
-import React from 'react'
-import  '../styles/Feed.css'
+import React, { useContext, useState, useEffect, props } from "react";
+import "../styles/Feed.css";
+import Axios from "axios";
+import FeedData from "../components/FeedData";
 
 //router
-import {Link} from 'react-router-dom';
-const Feed = () =>{
-   
-    
-    
-    return(
-        <>
-        <div className="Posting">
-            <h2 className="postTitle">Title of feed post</h2>
-            <h4 className="poster">Posted by: user at timestamp</h4>
-            <p className="desc">This is where the description will be</p>
-        </div>
-        
-        </>
-    );
-}
+import { Link } from "react-router-dom";
+const Feed = () => {
+  const [posts, getPosts] = useState("");
+
+  useEffect(() => {
+    getAllPosts();
+  }, []);
+
+  const getAllPosts = () => {
+    Axios.get("http://localhost:8000/postlist")
+      .then((response) => {
+        const allPosts = response.data.postData;
+        getPosts(allPosts);
+      })
+      .catch((error) => console.error(`Error: ${error}`));
+  };
+
+  return (
+    <>
+      {" "}
+      <FeedData posts={posts} />
+    </>
+  );
+};
 
 export default Feed;

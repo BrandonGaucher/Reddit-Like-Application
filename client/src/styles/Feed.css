@@ -1,20 +1,28 @@
-.Posting{
-    background: rgb(145,4,4);
-    background: radial-gradient(circle, rgba(145,4,4,1) 0%, rgba(0,0,0,1) 100%);
-    color: white;
-    margin: auto;
-    border: 5px solid silver;
-    padding: 1em;
-    width: 50%;
-    position: relative;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.Posting {
+  background: rgb(145, 4, 4);
+  background: radial-gradient(
+    circle,
+    rgba(145, 4, 4, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  color: white;
+  margin: auto;
+  margin-top: 1rem;
+  border: 1px solid white;
+  border-radius: 1rem;
+  padding: 1em;
+  width: 50%;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
-.poster{
-    color: #e6b800;
-    font-style: italic;
-    padding-top: 5px;
-    padding-bottom: 5px;
+.poster {
+  color: #e6b800;
+  font-style: italic;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
-.postTitle{
-    color: white;
+
+.postTitle {
+  color: white;
+  font-size: 2rem;
+  padding: 0;
 }
