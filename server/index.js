@@ -113,8 +113,7 @@ app.post("/createpost", async (req, res) => {
   pool.query(
     "INSERT INTO posts (title, description, category, username, post_date) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP()) ",
     [title, text, category, postUsername],
-
-    function (error, res, fields) {
+    async function (error, res, fields) {
       if (error) {
         res.send({
           code: 400,

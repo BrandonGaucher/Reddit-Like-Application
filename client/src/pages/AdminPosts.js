@@ -22,7 +22,7 @@ const AdminPosts = () => {
   return (
     <>
       <div class='sidenav'>
-        <Link to='/admin/users'>Users</Link>
+        <Link to='/admin'>Users</Link>
         <Link to='/admin/posts'>Posts</Link>
       </div>
       <div class='main'>

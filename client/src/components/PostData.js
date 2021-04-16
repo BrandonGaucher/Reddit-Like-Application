@@ -13,13 +13,13 @@ const PostData = (props) => {
   };
 
   const edit = (e) => {
-    const userEnable = e;
-    Axios.post("http://localhost:8000/enableUser", {
-      userToEnable: userEnable,
-    }).then((response) => {
-      alert("Enable " + userEnable + "!");
-      console.log(response);
-    });
+    // const postToEdit = e;
+    // Axios.post("http://localhost:8000/enableUser", {
+    //   userToEnable: userEnable,
+    // }).then((response) => {
+    //   alert("Enable " + userEnable + "!");
+    //   console.log(response);
+    // });
   };
   const displayPosts = (props) => {
     const { posts } = props;
