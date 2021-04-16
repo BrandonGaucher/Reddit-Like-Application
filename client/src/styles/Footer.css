@@ -1,0 +1,19 @@
+.footer{
+    background-color: black;
+    height: 1.5rem;
+    /*position: fixed;*/
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    z-index: 999;
+    text-align: center;
+}
+
+.foo{
+    color: white;
+    padding-right: 1.5rem;
+    text-decoration: none;
+    font-size: 12px;
+    margin-right: 1.75rem;
+    
+}
