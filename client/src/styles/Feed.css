@@ -1,6 +1,3 @@
-.feed {
-}
-
 .Posting {
   background: rgb(145, 4, 4);
   background: radial-gradient(
@@ -28,4 +25,20 @@
   color: white;
   font-size: 2rem;
   padding: 0;
+}
+
+.comment {
+  float: right;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.comment {
+  color: #eb1c23;
+  font-size: 1rem;
+  background: white;
+  border: 1px solid #eb1c23;
+  padding: 0.45rem 0.75rem 0.25rem 0.5rem;
+  margin: 1rem;
 }

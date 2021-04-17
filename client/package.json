@@ -1,9 +1,6 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "engines": {
-    "node": "14.15.3"
-  },
   "private": true,
   "proxy": "http://server:8000",
   "dependencies": {
@@ -35,8 +32,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "jest": "^26.6.3"
   }
 }

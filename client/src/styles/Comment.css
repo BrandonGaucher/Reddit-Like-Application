@@ -1,0 +1,27 @@
+.commentbox {
+    width: 100%;
+    background-color: white;
+    padding: 14px 20px;
+    /* font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px; */
+    height: 150px;
+    resize: vertical;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 0 0 1pt darkgrey;
+  }
+  
+  .commentbox[type=text]:focus {
+    width: 100%;
+    background-color: white;
+    padding: 14px 20px;
+    /* font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px; */
+    height: 150px;
+    resize: vertical;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 0 0 1pt rgb(255, 130, 130);
+  }
