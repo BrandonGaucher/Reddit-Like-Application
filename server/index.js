@@ -192,3 +192,28 @@ app.post("/enableUser", (req, res) => {
     res.send({ userData: data });
   });
 });
+
+app.post("/profile", (req, res) => {
+  const user = req.body.username;
+  
+  pool.query(
+    "SELECT email FROM users WHERE username LIKE ? ",
+    [user],
+    function (error, data) {
+      if (error) {
+        res.send({
+          code: 400,
+          failed: "error occurred",
+          error: error,
+        });
+      } else {
+        res.send({
+          emailData: data[0].email,
+          code: 200,
+          success: "received email value",
+        });
+      }
+    }
+  );
+
+});
