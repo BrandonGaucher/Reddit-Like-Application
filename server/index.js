@@ -160,6 +160,18 @@ app.post("/categorydata", async (req, res, next) => {
     }
   );
 });
+//search for post
+app.post("/search", async (req, res, next) => {
+  const title = req.body.title;
+  pool.query(
+    "SELECT * FROM posts WHERE title LIKE ?",
+    [title],
+    async function (err, data, fields) {
+      if (err) throw err;
+      res.send({ postData: data });
+    }
+  );
+});
 //remove post
 app.post("/removePost", (req, res) => {
   const post = req.body.postToRemove;
