@@ -9,18 +9,12 @@ import { UserContext } from "./UserContext";
 
 const Nav = () => {
   const { user, setUser } = useContext(UserContext);
-  var var1 = setInterval(timer1, 1000);
-  function timer1() {
-    var d = new Date();
-    document.getElementById("time_one").innerHTML = d.toLocaleTimeString();
-}
   return (
     <>
       <div className='navbar'>
         <Link to='/' class='active'>
           Home
         </Link>
-        <p id="time_one"></p>
         <input
           type='text'
           onClick='search_func()'
@@ -30,7 +24,6 @@ const Nav = () => {
         <Link to='/register' id='btn-signup' className='nav-a'>
           Sign up
         </Link>
-          
           ) : (
                <Link to='/profile' id='btn-signup' className='nav-a'>
             My Profile
