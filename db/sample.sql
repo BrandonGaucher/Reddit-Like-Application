@@ -26,6 +26,17 @@ CREATE TABLE IF NOT EXISTS `posts` (
     REFERENCES `users` (username)  )
     ENGINE=INNODB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+CREATE TABLE IF NOT EXISTS `comments` (
+    `comment_id` INT(11) NOT NULL AUTO_INCREMENT,
+    `description` VARCHAR(255) NOT NULL,
+    `post_date` DATE NOT NULL,
+    `username`  VARCHAR(255) NOT NULL,
+    `postId`  INT(11) NOT NULL,
+    PRIMARY KEY (comment_id),
+    FOREIGN KEY (postId) 
+    REFERENCES `posts` (id)  )
+    ENGINE=INNODB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
   -- CREATE TABLE IF NOT EXISTS `comments` (
   --   `id` INT(11) NOT NULL AUTO_INCREMENT,
   --   `content` VARCHAR(255) NOT NULL,

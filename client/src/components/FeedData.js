@@ -12,12 +12,12 @@ const FeedData = (props) => {
           <div className='Posting' key={post._id}>
             <h2 className='postTitle'>{post.title}</h2>
             <h4 className='poster'>Posted by: {post.username}</h4>
-            <h4 className='poster'>Category: {post.category}</h4>
-            <p className='desc'>{post.description}</p>
-            <Link to='/comment'  className='comment'>
-            Comment
+            <Link to='/comment' className='comment'>
+              Comment
             </Link>
-            
+            <h4 className='poster'>Category: {post.category}</h4>
+
+            <p className='desc'>{post.description}</p>
           </div>
         );
       });
