@@ -5,8 +5,16 @@ import { UserContext } from "./UserContext";
 
 const Footer = () => {
   const { user, setUser } = useContext(UserContext);
+
+  var var1 = setInterval(timer1, 1000);
+  function timer1() {
+    var d = new Date();
+    document.getElementById("time_one").innerHTML = d.toLocaleTimeString();
+}
+
   return (
     <div className="footer">
+       <p className='time' id="time_one"></p>
       <Link to='/' className='foo'>
         Home
       </Link>

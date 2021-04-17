@@ -21,32 +21,42 @@ const Nav = () => {
       .catch((error) => console.error(`Error: ${error}`));
   };
   const { user, setUser } = useContext(UserContext);
-  var var1 = setInterval(timer1, 1000);
-  function timer1() {
-    var d = new Date();
-    document.getElementById("time_one").innerHTML = d.toLocaleTimeString();
-  }
   return (
     <>
       <div className='navbar'>
         <Link to='/' class='active'>
           Home
         </Link>
-        <p id='time_one'></p>
-        <input
-          type='text'
-          onClick='search_func()'
-          placeholder='Search..'
-        ></input>
-        {user == "Guest" ? (
-          <Link to='/register' id='btn-signup' className='nav-a'>
-            Sign up
-          </Link>
-        ) : (
-          <Link to='/profile' id='btn-profile' className='nav-a'>
-            My Profile
-          </Link>
-        )}
+        <form action=''>
+          <input
+            id='userInput'
+            type='text'
+            onChange={(e) => {
+              setTitleSearch(e.target.value);
+            }}
+            placeholder='Search..'
+          ></input>
+          <input id='btn-search' type='submit' placeholder='Search'></input>
+
+          {user == "Guest" ? (
+            <Link to='/register' id='btn-signup' className='nav-a'>
+              Sign up
+            </Link>
+          ) : (
+            <Link to='/profile' id='btn-signup' className='nav-a'>
+              My Profile
+            </Link>
+          )}
+          {user == "Guest" ? (
+            <Link to='/login' id='btn-login' className='nav-a'>
+              Login
+            </Link>
+          ) : (
+            <Link to='/profile' id='btn-profile' className='nav-a'>
+              My Profile
+            </Link>
+          )}
+        </form>
       </div>
     </>
   );
