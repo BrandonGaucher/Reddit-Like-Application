@@ -36,7 +36,7 @@ navigate to http://localhost:3000 for the react app.
 ## phpmyadmin
 phpadmin http://localhost:8080
 
-username: sampleusername
+username: sampleuser
 password: samplepassword
 
 
