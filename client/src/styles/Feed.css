@@ -29,3 +29,14 @@
   font-size: 2rem;
   padding: 0;
 }
+
+.comment{
+  float: right;
+  color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.comment:hover{
+  color:#eb1c23;
+}

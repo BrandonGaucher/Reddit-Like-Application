@@ -6,6 +6,7 @@ import Profile from "../pages/Profile";
 import AdminUsers from "../pages/AdminUsers";
 import AdminPosts from "../pages/AdminPosts";
 import Category from "../pages/Category";
+import Comment from "../pages/Comment";
 
 //components
 
@@ -44,11 +45,12 @@ function App() {
             <Route path='/admin/posts' exact>
               <AdminPosts />
             </Route>
-
             <Route path='/profile' exact>
               <Profile />
             </Route>
-
+            <Route path='/comment' exact>
+              <Comment />
+            </Route>
             <Route path='/category/:id' component={Category} />
           </Switch>
         </UserContext.Provider>

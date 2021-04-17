@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const FeedData = (props) => {
   const displayPosts = (props) => {
@@ -13,6 +14,10 @@ const FeedData = (props) => {
             <h4 className='poster'>Posted by: {post.username}</h4>
             <h4 className='poster'>Category: {post.category}</h4>
             <p className='desc'>{post.description}</p>
+            <Link to='/comment'  className='comment'>
+            Comment
+            </Link>
+            
           </div>
         );
       });
