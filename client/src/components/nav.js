@@ -47,15 +47,20 @@ const Nav = () => {
               My Profile
             </Link>
           )}
-          {user == "Guest" ? (
-            <Link to='/login' id='btn-login' className='nav-a'>
-              Login
-            </Link>
-          ) : (
-            <Link to='/profile' id='btn-profile' className='nav-a'>
-              My Profile
-            </Link>
-          )}
+            {user == "Guest" ? (
+           <Link to='/login' id='btn-login' className='nav-a'>
+           Login
+         </Link>
+
+        ) : (
+          <button className='nav-a' id='btn-profile' onClick={
+            async() => {
+              setUser("Guest");
+            }
+          }>
+            Logout
+          </button>
+        )}
         </form>
       </div>
     </>
