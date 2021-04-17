@@ -46,7 +46,7 @@ function App() {
             </Route>
 
             <Route path='/profile' exact>
-            <Profile />
+              <Profile />
             </Route>
 
             <Route path='/category/:id' component={Category} />

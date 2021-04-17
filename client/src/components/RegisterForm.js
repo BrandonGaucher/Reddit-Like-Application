@@ -22,10 +22,10 @@ const RegisterForm = () => {
       email: emailReg,
     }).then((response) => {
       console.log(response);
-      if(response.data.correct){
-        alert("Registered Successfully!");
-      }
-      else{
+      if (response.data.correct) {
+        alert("Registered Successfully! You can now login");
+        document.getElementById("reg-form").reset();
+      } else {
         alert("There was a problem with registration");
       }
     });
@@ -33,13 +33,16 @@ const RegisterForm = () => {
 
   return (
     <div className='Register'>
-       <span className='notbread'><Link to='/' class='bread'>
+      <span className='notbread'>
+        <Link to='/' class='bread'>
           Home
-        </Link> | Register</span>
+        </Link>{" "}
+        | Register
+      </span>
       <div className='box'>
         <h2>Register</h2>
         <br></br>
-        <form onSubmit={handleSubmit(reg)}>
+        <form id='reg-form' onSubmit={handleSubmit(reg)}>
           <label>Username</label>
           <input
             {...register("username", {
