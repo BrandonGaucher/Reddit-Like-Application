@@ -7,7 +7,7 @@ import FeedData from "../components/FeedData";
 import { Link } from "react-router-dom";
 const Feed = () => {
   const [posts, getPosts] = useState("");
-
+  const [comments, getComments] = useState("");
   useEffect(() => {
     getAllPosts();
   }, []);
