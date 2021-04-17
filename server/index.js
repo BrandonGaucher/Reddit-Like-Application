@@ -262,3 +262,85 @@ app.post("/comment", (req, res) => {
     }
   );
 });
+
+app.post("/updateUsername", (req, res) => {
+  const NewUsername = req.body.NewUsername;
+  const OldUsername = req.body.OldUsername;
+
+  pool.query(
+    "UPDATE users SET username = ? WHERE username = ?",
+    [NewUsername, OldUsername],
+    function (error, results, fields) {
+      if (error) {
+        res.send({
+          code: 400,
+          failed: "error occurred",
+          error: error,
+        });
+      } else {
+        res.send({
+          code: 200,
+          success: "username updated sucessfully",
+          correct: true,
+        });
+      }
+    }
+  );
+});
+
+app.post("/updateEmail", (req, res) => {
+  const NewEmail = req.body.NewEmail;
+  const username = req.body.username;
+
+  pool.query(
+    "UPDATE users SET email = ? WHERE username = ?",
+    [NewEmail, username],
+    function (error, results, fields) {
+      if (error) {
+        res.send({
+          code: 400,
+          failed: "error occurred",
+          error: error,
+        });
+      } else {
+        res.send({
+          code: 200,
+          success: "email updated sucessfully",
+          correct: true,
+        });
+      }
+    }
+  );
+});
+
+const hashPassword = async (password) => {
+  const hash = await bcrypt.hash(password, 10);
+  return hash;
+}
+
+
+app.post("/updatePassword", (req, res) => {
+  const NewPassword = req.body.NewPassword;
+  const username = req.body.username;
+  const NewEncryptedPassword = hashPassword(NewPassword);
+
+  pool.query(
+    "UPDATE users SET password = ? WHERE username LIKE ?",
+    [NewEncryptedPassword, username],
+    function (error, results, fields) {
+      if (error) {
+        res.send({
+          code: 400,
+          failed: "error occurred",
+          error: error,
+        });
+      } else {
+        res.send({
+          code: 200,
+          success: "password updated sucessfully",
+          correct: true,
+        });
+      }
+    }
+  );
+});
