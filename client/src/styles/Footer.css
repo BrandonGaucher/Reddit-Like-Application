@@ -20,3 +20,8 @@
 .foo:hover{
   color:#eb1c23;
 }
+
+.time{
+  float: right;
+  margin-top: 0.2rem;
+}
