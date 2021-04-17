@@ -5,11 +5,13 @@ import Nav from "../components/nav";
 //page components
 import "../styles/Home.css";
 import Feed from "../components/Feed";
+import Masthead from "../components/Masthead";
 
 const Home = () => {
   return (
     <div className='home'>
       <Nav />
+      <Masthead />
       <div className='row'>
         <div className='column-1'>
           <Categories />
