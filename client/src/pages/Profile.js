@@ -7,6 +7,7 @@ import { UserContext } from "../components/UserContext";
 import Nav from "../components/nav";
 import { Link } from "react-router-dom";
 import "../styles/Bread.css";
+import ProfileUpdate from "../components/ProfileUpdate";
 
 
 const Profile = () => {
@@ -56,6 +57,7 @@ const Profile = () => {
         </label>
         <label>{email}</label>
       </div>
+      <ProfileUpdate />
     </div>
   );
 };
