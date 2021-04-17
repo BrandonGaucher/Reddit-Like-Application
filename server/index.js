@@ -142,7 +142,7 @@ app.get("/userlist", async (req, res, next) => {
 
 // get all posts
 app.get("/postlist", async (req, res, next) => {
-  pool.query("SELECT * FROM posts", async function (err, data, fields) {
+  pool.query("SELECT * FROM posts ORDER BY post_date DESC", async function (err, data, fields) {
     if (err) throw err;
     res.send({ postData: data });
   });
