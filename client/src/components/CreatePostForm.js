@@ -2,6 +2,8 @@ import React, {useContext, useState } from "react";
 import Axios from "axios";
 import "../styles/CreateSubmitPost.css";
 import { UserContext } from "./UserContext";
+import { Link } from "react-router-dom";
+import "../styles/Bread.css";
 
 const CreatePostForm = () => {
   const [titleReg, setTitleReg] = useState("");
@@ -26,6 +28,9 @@ const CreatePostForm = () => {
 
   return (
     <div className='CreatePost'>
+       <span className='notbread'><Link to='/' class='bread'>
+          Home
+        </Link> | Create Post</span>
       <form id="postForm"onSubmit={
       (e) => {
         e.preventDefault();

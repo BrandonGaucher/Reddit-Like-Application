@@ -1,0 +1,14 @@
+.bread{
+    color: black;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.bread:hover{
+  color:#eb1c23;
+}
+
+.notbread{
+    font-size: 12px;
+  }
+  

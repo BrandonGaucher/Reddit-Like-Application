@@ -1,6 +1,9 @@
 import React, { useContext, useState } from "react";
 import Axios from "axios";
 import { UserContext } from "./UserContext";
+import { Link } from "react-router-dom";
+import "../styles/Bread.css";
+
 
 const LoginForm = () => {
   const [usernameLog, setUsernameLog] = useState("");
@@ -22,6 +25,9 @@ const LoginForm = () => {
 
   return (
     <div className='Login'>
+      <span className='notbread'><Link to='/' class='bread'>
+          Home
+        </Link> | Login</span>
       <form id="loginF" onSubmit={
         (e) => {
           e.preventDefault();

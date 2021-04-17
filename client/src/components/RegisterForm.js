@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Axios from "axios";
 import { useForm } from "react-hook-form";
 import { Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
+import "../styles/Bread.css";
 
 const RegisterForm = () => {
   const {
@@ -31,6 +33,9 @@ const RegisterForm = () => {
 
   return (
     <div className='Register'>
+       <span className='notbread'><Link to='/' class='bread'>
+          Home
+        </Link> | Register</span>
       <div className='box'>
         <h2>Register</h2>
         <br></br>

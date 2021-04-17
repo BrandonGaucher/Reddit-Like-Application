@@ -45,6 +45,10 @@ function App() {
               <AdminPosts />
             </Route>
 
+            <Route path='/profile' exact>
+            <Profile />
+            </Route>
+
             <Route path='/category/:id' component={Category} />
           </Switch>
         </UserContext.Provider>
