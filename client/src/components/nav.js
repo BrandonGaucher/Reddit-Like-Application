@@ -20,19 +20,30 @@ const Nav = () => {
           onClick='search_func()'
           placeholder='Search..'
         ></input>
-        <Link to='/login' id='btn-login' className='nav-a'>
-          Login
-        </Link>
+        {user == "Guest" ? (
         <Link to='/register' id='btn-signup' className='nav-a'>
           Sign up
         </Link>
-        {user == "Guest" ? (
-          <br></br>
+          
           ) : (
-               <Link to='/profile' id='btn-profile' className='nav-a'>
+               <Link to='/profile' id='btn-signup' className='nav-a'>
             My Profile
             </Link>
           )}
+        {user == "Guest" ? (
+           <Link to='/login' id='btn-login' className='nav-a'>
+           Login
+         </Link>
+
+        ) : (
+          <button className='nav-a' id='btn-profile' onClick={
+            async() => {
+              setUser("Guest");
+            }
+          }>
+            Logout
+          </button>
+        )}
       </div>
     </>
   );
