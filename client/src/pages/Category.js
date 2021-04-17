@@ -4,6 +4,8 @@ import { useParams } from "react-router";
 import Axios from "axios";
 import FeedData from "../components/FeedData";
 import Categories from "../components/Categories";
+import { Link } from "react-router-dom";
+import "../styles/Bread.css";
 
 const Category = () => {
   const { id } = useParams();
@@ -27,6 +29,9 @@ const Category = () => {
   return (
     <>
       <Nav />
+      <span className='notbread'><Link to='/' class='bread'>
+          Home
+        </Link> | Categories</span>
       <h1>Category: {id}</h1>
       <div className='row'>
         <div className='column-1'></div>
