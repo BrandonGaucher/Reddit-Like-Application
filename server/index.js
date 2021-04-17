@@ -147,6 +147,13 @@ app.get("/postlist", async (req, res, next) => {
     res.send({ postData: data });
   });
 });
+// get all comments
+app.get("/commentlist", async (req, res, next) => {
+  pool.query("SELECT * FROM comments", async function (err, data, fields) {
+    if (err) throw err;
+    res.send({ commentData: data });
+  });
+});
 
 //get category of posts
 app.post("/categorydata", async (req, res, next) => {
@@ -207,7 +214,7 @@ app.post("/enableUser", (req, res) => {
 
 app.post("/profile", (req, res) => {
   const user = req.body.username;
-  
+
   pool.query(
     "SELECT email FROM users WHERE username LIKE ? ",
     [user],
@@ -227,5 +234,31 @@ app.post("/profile", (req, res) => {
       }
     }
   );
+});
 
+//creaete a comment
+
+app.post("/comment", (req, res) => {
+  const username = req.body.username;
+  const description = req.body.description;
+  const post_id = req.body.postId;
+
+  pool.query(
+    "INSERT INTO comments (description, post_date, username, postId) VALUES (?, CURRENT_TIMESTAMP(), ?, ?) ",
+    [description, username, post_id],
+    function (error, data) {
+      if (error) {
+        res.send({
+          code: 400,
+          failed: "error occurred",
+          error: error,
+        });
+      } else {
+        res.send({
+          code: 200,
+          success: "comment posted!",
+        });
+      }
+    }
+  );
 });

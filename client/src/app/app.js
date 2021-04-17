@@ -48,9 +48,8 @@ function App() {
             <Route path='/profile' exact>
               <Profile />
             </Route>
-            <Route path='/comment' exact>
-              <Comment />
-            </Route>
+            <Route path='/comment/:id' component={Comment} />
+
             <Route path='/category/:id' component={Category} />
           </Switch>
         </UserContext.Provider>
